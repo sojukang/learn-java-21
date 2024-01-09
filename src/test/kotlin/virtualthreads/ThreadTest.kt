@@ -2,6 +2,7 @@ package virtualthreads
 
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertTrue
 
 internal class ThreadTest {
     @Test
@@ -14,7 +15,8 @@ internal class ThreadTest {
             }
         }
 
-        assertEquals(virtualThread.state, Thread.State.NEW)
+        assertEquals(Thread.State.NEW, virtualThread.state)
+        assertTrue(virtualThread.isVirtual)
     }
 
     @Test
